@@ -1,4 +1,4 @@
-package com.bugjc.java.basics.java17;
+package com.bugjc.java.basics.java7;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
