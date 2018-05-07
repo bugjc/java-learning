@@ -5,6 +5,9 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * 分组
+ */
 public class GroupTest {
 
     class Apple {
