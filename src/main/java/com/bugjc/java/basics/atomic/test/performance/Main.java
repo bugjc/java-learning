@@ -26,7 +26,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 
-		COUNTER = Counters.STAMPED.toString();
+		COUNTER = Counters.ADDER.toString();
 		
 		if (args.length > 0) {
 			COUNTER = args[0];
