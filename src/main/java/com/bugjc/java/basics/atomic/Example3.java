@@ -12,7 +12,7 @@ public class Example3 {
     private static final AtomicReferenceFieldUpdater leftUpdater = AtomicReferenceFieldUpdater.newUpdater(Example3.class, Example3.class, "left");
     private static AtomicReferenceFieldUpdater rightUpdater = AtomicReferenceFieldUpdater.newUpdater(Example3.class, Example3.class, "right");
 
-    boolean compareAndSetLeft(Example3 expect, Example3 update) {
+    private boolean compareAndSetLeft(Example3 expect, Example3 update) {
         return leftUpdater.compareAndSet(this, expect, update);
     }
 
