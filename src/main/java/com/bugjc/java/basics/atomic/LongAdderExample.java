@@ -15,7 +15,7 @@ public class LongAdderExample {
         longAdder.increment();//+1
         longAdder.decrement();//-1
         longAdder.add(10L);//增加一个值（非原子操作）
-        System.out.println(longAdder.intValue());
+        log.info(longAdder.intValue()+"");
         //内部多个变量a1,a2,a3......
         LongAccumulator longAccumulator = new LongAccumulator(
                 //提供一个函数（非原子操作）
