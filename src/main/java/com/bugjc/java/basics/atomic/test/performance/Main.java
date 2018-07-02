@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 @Slf4j
 public class Main {
-	public static long TARGET_NUMBER 	= 100000000L;			//目标计数数量
+	public static long TARGET_NUMBER 	= 10000000000L;			//目标计数数量
 	public static int THREADS = 10;							//线程数量
 	public static int ROUNDS = 10;							//循环次数
 	private static String COUNTER = Counters.DIRTY.toString();//默认测试实例
