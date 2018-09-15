@@ -35,8 +35,9 @@ public class Solution {
     }
 
     void max(TreeNode root) {
-        if (root == null)
+        if (root == null){
             return;
+        }
 
         if (root.val > maxNum) {
             maxNum = root.val;

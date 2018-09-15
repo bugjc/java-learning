@@ -13,6 +13,7 @@ public class AtomicReferenceDemo {
         //模拟多个线程同时更新后台数据库,为用户充值
         for (int i = 0; i < 3; i++) {
             new Thread() {
+                @Override
                 public void run() {
                     for (;;){
                         while (true) {

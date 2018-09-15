@@ -1,13 +1,13 @@
 package com.bugjc.java.lintcode.level.easy;
 
 /**
- * @Author Administrator
+ * @Author aoki
  * @Description 单例模式
  * @Date Create in 16:17 2017/8/8
  */
 public class Singleton {
 
-    private final static Singleton solution = new Singleton();
+    private final static Singleton SOLUTION = new Singleton();
 
     private Singleton() {
     }
@@ -17,7 +17,7 @@ public class Singleton {
      */
     public static Singleton getInstance() {
         // write your code here
-        return solution;
+        return SOLUTION;
     }
 
 }
