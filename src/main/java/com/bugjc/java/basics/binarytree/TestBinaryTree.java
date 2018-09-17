@@ -27,7 +27,7 @@ public class TestBinaryTree {
         tree.add('J');tree.add(null);tree.add(null);
         tree.add('G');tree.add(null);tree.add(null);
 
-        TreeNode<Character> root=binaryTree.createBinaryPre(tree);
+        TreeNode<Character> root = binaryTree.createBinaryPre(tree);
 
         //先序遍历（递归）
         binaryTree.PrintBinaryTreePreRecur(root);System.out.println();
