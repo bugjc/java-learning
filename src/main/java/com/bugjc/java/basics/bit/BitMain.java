@@ -13,6 +13,8 @@ import java.util.Arrays;
 public class BitMain {
     public static void main(String [] args) {
 
+
+        log.info("{}",1 >> 1);
         log.info("{}",1 << 4);
 
         //1、将5左移2位(右移同理)：<<
