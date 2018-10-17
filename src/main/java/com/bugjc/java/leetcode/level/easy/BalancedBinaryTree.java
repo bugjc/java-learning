@@ -1,12 +1,6 @@
 package com.bugjc.java.leetcode.level.easy;
 
 import lombok.extern.slf4j.Slf4j;
-import sun.jvm.hotspot.utilities.Assert;
-
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Queue;
 
 /**
  * 平衡二叉树
