@@ -1,6 +1,6 @@
 package com.bugjc.java.basics.linkedlist;
 
-import java.util.LinkedList;
+import java.util.*;
 
 /**
  * 1）单链表的插入、删除、查找操作；
@@ -180,7 +180,7 @@ public class SinglyLinkedList {
         SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
         singlyLinkedList.insertAfter(SinglyLinkedList.createNode(1),SinglyLinkedList.createNode(2));
 
-
+        Map map = new HashMap();
 
         //创建一个LinkedList并添加3个值,结果{4,3,5}
         LinkedList<Integer> linkedList = new LinkedList<>();
