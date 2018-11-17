@@ -27,9 +27,9 @@ public class SampleBrowser {
     }
 
     private String currentPage;
+
     private LinkedListBasedStack backStack;
     private LinkedListBasedStack forwardStack;
-
     public SampleBrowser() {
         this.backStack = new LinkedListBasedStack();
         this.forwardStack = new LinkedListBasedStack();
@@ -140,6 +140,7 @@ public class SampleBrowser {
             if (this.top == null) {
                 return null;
             }
+
             return this.top.data;
         }
 
@@ -157,6 +158,7 @@ public class SampleBrowser {
             }
             System.out.println();
         }
+
 
         public static class Node {
 
