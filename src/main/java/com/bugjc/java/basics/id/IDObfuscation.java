@@ -20,6 +20,11 @@ public class IDObfuscation {
         this.key = key;
     }
 
+    /**
+     * 混淆方法
+     * @param id
+     * @return
+     */
     public String obfuscate(long id) {
         return toStr(swap(id));
     }
@@ -83,6 +88,11 @@ public class IDObfuscation {
         return i >> (i & 0xF) & 0xFFFFFFFFL;
     }
 
+    /**
+     * 恢复方法
+     * @param obfuscatedId
+     * @return
+     */
     public long restore(String obfuscatedId) {
         if (obfuscatedId == null || obfuscatedId.length() != 25) throw new IllegalArgumentException("invalid obfuscatedId");
         try {
