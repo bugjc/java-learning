@@ -14,15 +14,15 @@ public class WeightRobinStrategy {
     private Integer pos = 0;
     public String WeightRobin(){
         Map<String, Integer> ipServerMap = new ConcurrentHashMap<>(IPTable.getServers());
-        Set<String> ipSet=ipServerMap.keySet();
-        Iterator<String> ipIterator=ipSet.iterator();
+        Set<String> ipSet = ipServerMap.keySet();
+        Iterator<String> ipIterator = ipSet.iterator();
 
         //定义一个list放所有server
         ArrayList<String> ipArrayList=new ArrayList<String>();
         //循环set，根据set中的可以去得知map中的value，给list中添加对应数字的server数量
         while (ipIterator.hasNext()){
-            String serverName=ipIterator.next();
-            Integer weight=ipServerMap.get(serverName);
+            String serverName = ipIterator.next();
+            Integer weight = ipServerMap.get(serverName);
             for (int i = 0;i < weight ;i++){
                 ipArrayList.add(serverName);
             }
