@@ -1,17 +1,18 @@
 package com.bugjc.java.business.mfa.totp;
 
-import org.apache.commons.codec.binary.Base32;
-import org.junit.Test;
+import cn.hutool.core.codec.Base32;
+import org.junit.jupiter.api.Test;
 
 import java.security.GeneralSecurityException;
 import java.util.Random;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class TwoFactorAuthUtilTest {
+
+class TwoFactorAuthUtilTest {
 
 	@Test
-	public void testZeroPrepend() {
+	void testZeroPrepend() {
 		Random random = new Random();
 		for (int i = 0; i < 10000; i++) {
 			int num = random.nextInt(1000000);
@@ -23,28 +24,28 @@ public class TwoFactorAuthUtilTest {
 	}
 
 	@Test
-	public void testDecodeBase32() {
+	void testDecodeBase32() {
 		Random random = new Random();
 		random.nextBytes(new byte[100]);
-		Base32 base32 = new Base32();
+
 		for (int i = 0; i < 10000; i++) {
 			byte[] bytes = new byte[random.nextInt(10) + 1];
 			random.nextBytes(bytes);
-			String encoded = base32.encodeAsString(bytes);
-			byte[] expected = base32.decode(encoded);
+			String encoded = Base32.encode(bytes);
+			byte[] expected = Base32.decode(encoded);
 			byte[] actual = TimeBasedOneTimePasswordUtil.decodeBase32(encoded);
 			assertArrayEquals(expected, actual);
 		}
 	}
 
 	@Test
-	public void testBadBase32() {
+	void testBadBase32() {
 		String[] strings =
 				new String[] { "A", "AB", "ABC", "ABCD", "ABCDE", "ABCDEF", "ABCDEFG", "ABCDEFGH", "ABCDEFGHI" };
-		Base32 base32 = new Base32();
+
 		for (String str : strings) {
 			byte[] decoded = TimeBasedOneTimePasswordUtil.decodeBase32(str);
-			String encoded = base32.encodeAsString(decoded);
+			String encoded = Base32.encode(decoded);
 			byte[] result = TimeBasedOneTimePasswordUtil.decodeBase32(encoded);
 			// System.out.println(str + " becomes " + encoded);
 			assertArrayEquals(decoded, result);
@@ -52,7 +53,7 @@ public class TwoFactorAuthUtilTest {
 	}
 
 	@Test
-	public void testVariusKnownSecretTimeCodes() throws GeneralSecurityException {
+	void testVariusKnownSecretTimeCodes() throws GeneralSecurityException {
 		String secret = "NY4A5CPJZ46LXZCP";
 		testStringAndNumber(secret, 1000L, 748810, "748810");
 		testStringAndNumber(secret, 7451000L, 325893, "325893");
@@ -73,7 +74,7 @@ public class TwoFactorAuthUtilTest {
 	}
 
 	@Test
-	public void testValidate() throws GeneralSecurityException {
+	void testValidate() throws GeneralSecurityException {
 		String secret = "NY4A5CPJZ46LXZCP";
 		assertEquals(162123, TimeBasedOneTimePasswordUtil.generateNumber(secret, 7439999,
 				TimeBasedOneTimePasswordUtil.DEFAULT_TIME_STEP_SECONDS));
@@ -109,7 +110,7 @@ public class TwoFactorAuthUtilTest {
 	}
 
 	@Test
-	public void testGenerateSecret() {
+	void testGenerateSecret() {
 		assertEquals(16, TimeBasedOneTimePasswordUtil.generateBase32Secret().length());
 		assertEquals(16, TimeBasedOneTimePasswordUtil.generateBase32Secret(16).length());
 		assertEquals(1, TimeBasedOneTimePasswordUtil.generateBase32Secret(1).length());

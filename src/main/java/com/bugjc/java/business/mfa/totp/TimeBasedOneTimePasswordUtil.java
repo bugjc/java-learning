@@ -53,9 +53,7 @@ public class TimeBasedOneTimePasswordUtil {
 
 	static {
 		char[] chars = new char[NUM_DIGITS_OUTPUT];
-		for (int i = 0; i < chars.length; i++) {
-			chars[i] = '0';
-		}
+		Arrays.fill(chars, '0');
 		blockOfZeros = new String(chars);
 	}
 

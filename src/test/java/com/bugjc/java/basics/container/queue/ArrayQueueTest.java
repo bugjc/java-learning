@@ -1,14 +1,14 @@
-package com.bugjc.java.basics.queue;
+package com.bugjc.java.basics.container.queue;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 @Slf4j
-public class ArrayQueueTest {
+class ArrayQueueTest {
 
 
     @Test
-    public void testArrayQueue(){
+    void testArrayQueue(){
         ArrayQueue arrayQueue = new ArrayQueue(3);
         log.info("入队状态：{}",arrayQueue.enqueue("1"));
         log.info("入队状态：{}",arrayQueue.enqueue("2"));

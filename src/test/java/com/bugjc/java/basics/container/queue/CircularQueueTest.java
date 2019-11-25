@@ -1,14 +1,14 @@
-package com.bugjc.java.basics.queue;
+package com.bugjc.java.basics.container.queue;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 @Slf4j
-public class CircularQueueTest {
+class CircularQueueTest {
 
 
     @Test
-    public void testCircularQueue(){
+    void testCircularQueue(){
         CircularQueue circularQueue = new CircularQueue(3);
         log.info("入队状态：{}",circularQueue.enqueue("1"));
         log.info("入队状态：{}",circularQueue.enqueue("2"));
