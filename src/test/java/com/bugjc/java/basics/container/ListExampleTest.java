@@ -1,11 +1,16 @@
 package com.bugjc.java.basics.container;
 
+import com.alibaba.fastjson.JSON;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Slf4j
 class ListExampleTest {
@@ -46,5 +51,66 @@ class ListExampleTest {
     void differenceSet() {
         log.info("求 locations1 中有的但是 locations2 中没有的元素");
         log.info("两个集合的差集：{}", ListExample.differenceSet(locations1, locations2).toString());
+    }
+
+    @Test
+    void listToMap(){
+        List<User> users = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            users.add(new User("answer", new Random().nextInt(100)));
+        }
+        System.out.println(JSON.toJSONString(users));
+
+        System.out.println();
+
+        // 如果 key 重复, 则根据 冲突方法 ·(key1, key2) -> key2· 判断. 解释: key1 key2 冲突时 取 key2
+        Map<String, User> map = users.stream().collect(Collectors.toMap(User::getName, Function.identity(), (key1, key2) -> key2));
+        System.out.println(JSON.toJSONString(map));
+    }
+
+    @Test
+    void deduplication(){
+
+        List<User> users = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            users.add(new User("answer", new Random().nextInt(100)));
+        }
+        System.out.println(JSON.toJSONString(users));
+
+        System.out.println();
+
+        // 根据name去重
+        List<User> unique = users.stream().collect(
+                Collectors.collectingAndThen(
+                        Collectors.toCollection(() -> new TreeSet<>(Comparator.comparing(User::getName))), ArrayList::new)
+        );
+        System.out.println(JSON.toJSONString(unique));
+
+        // 根据name,age两个属性去重
+        unique = users.stream().collect(
+                Collectors. collectingAndThen(
+                        Collectors.toCollection(() -> new TreeSet<>(Comparator.comparing(o -> o.getName() + ";" + o.getAge()))), ArrayList::new)
+        );
+        System.out.println(JSON.toJSONString(unique));
+
+    }
+
+
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class User {
+        private Long id;
+        private String name;
+        private Integer age;
+
+        public User(String name) {
+            this.name = name;
+        }
+
+        public User(String name, Integer age) {
+            this.name = name;
+            this.age = age;
+        }
     }
 }

@@ -93,4 +93,5 @@ public class ListExample {
         locations1.removeAll(locations2);
         return locations1;
     }
+
 }

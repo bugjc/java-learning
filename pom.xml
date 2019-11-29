@@ -15,6 +15,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
 
+        <cglib.version>3.3.0</cglib.version>
         <hutool-all.version>5.0.5</hutool-all.version>
         <logback-classic.version>1.2.3</logback-classic.version>
         <lombok.version>1.18.10</lombok.version>
@@ -24,6 +25,13 @@
     </properties>
 
     <dependencies>
+
+        <!-- cglib 动态代理库-->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>${cglib.version}</version>
+        </dependency>
 
         <!-- 工具类 -->
         <dependency>
@@ -66,7 +74,6 @@
             <artifactId>junit-jupiter</artifactId>
             <version>${junit-jupiter.version}</version>
         </dependency>
-
 
     </dependencies>
 
