@@ -1,5 +1,9 @@
 package com.bugjc.java.basics.design.pattern.proxy;
 
+import cn.hutool.core.lang.Singleton;
+import com.bugjc.java.basics.aop.ProxyUtil;
+import com.bugjc.java.basics.aop.aspect.TimeIntervalAspect;
+
 /**
  * 代理模式[[ 客户端--》代理对象--》目标对象 ]
  * @author aoki
@@ -8,14 +12,23 @@ package com.bugjc.java.basics.design.pattern.proxy;
 public class Client {
 
     public static void main(String[] args) throws Exception {
-        System.out.println("**********************CGLibProxy**********************");
-        CgLibProxy cgLibProxy = new CgLibProxy();
-        IUserManager userManager = (IUserManager) cgLibProxy.createProxyObject(new UserManagerImpl());
-        userManager.addUser("1", "aoki");
+        for (int i = 0; i < 100; i++) {
+            new Thread(() -> {
 
-        System.out.println("**********************JDKProxy**********************");
-        JdkProxy jdkPrpxy = new JdkProxy();
-        IUserManager iUserManager = (IUserManager) jdkPrpxy.newProxy(new UserManagerImpl());
-        iUserManager.addUser("2", "aoki");
+                for (int j = 0; j < 100; j++) {
+                    IUserManager userManager = (IUserManager) ProxyUtil.createProxy(Singleton.get(UserManagerImpl.class), Singleton.get(TimeIntervalAspect.class));
+                    userManager.addUser(j + "","aoki");
+                }
+
+            }).start();
+
+        }
+
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.exit(0);
     }
 }

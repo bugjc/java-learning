@@ -13,5 +13,5 @@ public interface IUserManager {
      * @param id
      * @param name
      */
-    String addUser(String id, String name);
+    public String addUser(String id, String name);
 }

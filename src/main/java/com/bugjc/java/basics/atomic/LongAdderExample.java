@@ -3,7 +3,6 @@ package com.bugjc.java.basics.atomic;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.atomic.LongAccumulator;
-import java.util.concurrent.atomic.LongAdder;
 
 /**
  * LongAdder、LongAccumulator示例 http://moguhu.com/article/detail?articleId=45
@@ -13,10 +12,6 @@ import java.util.concurrent.atomic.LongAdder;
 @Slf4j
 public class LongAdderExample {
 
-    /**
-     * 初始化 LongAdder
-     */
-    private static LongAdder longAdder = new LongAdder();
 
     /**
      * 初始化 LongAccumulator,内部多个变量a1,a2,a3......

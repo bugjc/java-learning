@@ -15,4 +15,5 @@
 - comparator（比较器接口实现示例）
 - id（常用 ID 生成算法实现）
 - stream（java8 流使用示例）
+- thread（线程使用示例）
 - threadlocal（线程局部变量使用示例）
