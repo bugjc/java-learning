@@ -22,9 +22,17 @@
         <fastjson.version>1.2.62</fastjson.version>
         <junit-jupiter.version>5.5.2</junit-jupiter.version>
         <lucene-core.version>4.0.0</lucene-core.version>
+        <disruptor.version>3.4.1</disruptor.version>
     </properties>
 
     <dependencies>
+
+        <!-- 高性能队列 -->
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>${disruptor.version}</version>
+        </dependency>
 
         <!-- cglib 动态代理库-->
         <dependency>
