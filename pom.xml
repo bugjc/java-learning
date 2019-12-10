@@ -23,9 +23,17 @@
         <junit-jupiter.version>5.5.2</junit-jupiter.version>
         <lucene-core.version>4.0.0</lucene-core.version>
         <disruptor.version>3.4.1</disruptor.version>
+        <guice.version>4.2.2</guice.version>
     </properties>
 
     <dependencies>
+
+        <!-- guice 依赖注入库 -->
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>${guice.version}</version>
+        </dependency>
 
         <!-- 高性能队列 -->
         <dependency>
