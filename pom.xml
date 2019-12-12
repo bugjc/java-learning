@@ -24,9 +24,25 @@
         <lucene-core.version>4.0.0</lucene-core.version>
         <disruptor.version>3.4.1</disruptor.version>
         <guice.version>4.2.2</guice.version>
+        <rocksdbjni.version>6.4.6</rocksdbjni.version>
+        <mapdb.version>3.0.7</mapdb.version>
     </properties>
 
     <dependencies>
+
+        <!-- key-value 存储引擎 -->
+        <dependency>
+            <groupId>org.mapdb</groupId>
+            <artifactId>mapdb</artifactId>
+            <version>${mapdb.version}</version>
+        </dependency>
+
+        <!-- key-value 存储引擎 -->
+        <dependency>
+            <groupId>org.rocksdb</groupId>
+            <artifactId>rocksdbjni</artifactId>
+            <version>${rocksdbjni.version}</version>
+        </dependency>
 
         <!-- guice 依赖注入库 -->
         <dependency>
