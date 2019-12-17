@@ -26,9 +26,22 @@
         <guice.version>4.2.2</guice.version>
         <rocksdbjni.version>6.4.6</rocksdbjni.version>
         <mapdb.version>3.0.7</mapdb.version>
+        <metrics-core.version>4.1.2</metrics-core.version>
     </properties>
 
     <dependencies>
+
+        <!-- 监控指标的度量类库 -->
+        <dependency>
+            <groupId>io.dropwizard.metrics</groupId>
+            <artifactId>metrics-core</artifactId>
+            <version>${metrics-core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.dropwizard.metrics</groupId>
+            <artifactId>metrics-healthchecks</artifactId>
+            <version>${metrics-core.version}</version>
+        </dependency>
 
         <!-- key-value 存储引擎 -->
         <dependency>
