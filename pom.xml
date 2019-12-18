@@ -21,6 +21,7 @@
         <lombok.version>1.18.10</lombok.version>
         <fastjson.version>1.2.62</fastjson.version>
         <junit-jupiter.version>5.5.2</junit-jupiter.version>
+        <assertj-core.version>3.14.0</assertj-core.version>
         <lucene-core.version>4.0.0</lucene-core.version>
         <disruptor.version>3.4.1</disruptor.version>
         <guice.version>4.2.2</guice.version>
@@ -111,6 +112,14 @@
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-core</artifactId>
             <version>${lucene-core.version}</version>
+        </dependency>
+
+        <!-- test -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj-core.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- junit5 -->
