@@ -28,6 +28,7 @@
         <rocksdbjni.version>6.4.6</rocksdbjni.version>
         <mapdb.version>3.0.7</mapdb.version>
         <metrics-core.version>4.1.2</metrics-core.version>
+        <junitperf.version>2.0.2</junitperf.version>
     </properties>
 
     <dependencies>
@@ -127,6 +128,13 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>${junit-jupiter.version}</version>
+        </dependency>
+
+        <!--性能测试框架-->
+        <dependency>
+            <groupId>com.github.houbb</groupId>
+            <artifactId>junitperf</artifactId>
+            <version>${junitperf.version}</version>
         </dependency>
 
     </dependencies>

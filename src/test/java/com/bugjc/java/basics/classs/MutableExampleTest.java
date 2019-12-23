@@ -1,14 +1,15 @@
 package com.bugjc.java.basics.classs;
 
+import com.github.houbb.junitperf.core.annotation.JunitPerfConfig;
+import com.github.houbb.junitperf.core.report.impl.HtmlReporter;
 import org.junit.jupiter.api.Test;
 
 import java.util.Date;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class MutableExampleTest {
 
     @Test
+    @JunitPerfConfig(duration = 1000, reporter = {HtmlReporter.class})
     void test() {
 
         Date birthday = new Date();
