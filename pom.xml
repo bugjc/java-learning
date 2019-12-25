@@ -29,9 +29,17 @@
         <mapdb.version>3.0.7</mapdb.version>
         <metrics-core.version>4.1.2</metrics-core.version>
         <junitperf.version>2.0.2</junitperf.version>
+        <retry4j.version>0.15.0</retry4j.version>
     </properties>
 
     <dependencies>
+
+        <!-- java8 轻量级重试库-->
+        <dependency>
+            <groupId>com.evanlennick</groupId>
+            <artifactId>retry4j</artifactId>
+            <version>${retry4j.version}</version>
+        </dependency>
 
         <!-- 监控指标的度量类库 -->
         <dependency>
