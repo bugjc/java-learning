@@ -23,7 +23,7 @@ public class TimerExample {
     /**
      * 直方图
      */
-    private static final Timer timer = REGISTRY.timer("requests");
+    private static final Timer TIMER = REGISTRY.timer("requests");
 
     /**
      * 控制台打印监控数据
@@ -37,7 +37,7 @@ public class TimerExample {
      * 处理请求的方法
      */
     private static void handleRequest() {
-        Timer.Context time = timer.time();
+        Timer.Context time = TIMER.time();
         ;
         try {
             randomSleep();

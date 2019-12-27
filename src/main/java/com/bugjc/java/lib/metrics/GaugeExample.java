@@ -9,7 +9,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Gauge是一个最简单的计量，一般用来统计瞬时状态的数据信息.例：某一时刻的集合中的大小
+ * Gauge是一个最简单的计量，一般用来统计瞬时状态的数据信息.例：①某一时刻的集合中的大小;你开车时，②当前速度是 Gauge 值。
  *
  * @author aoki
  * @date 2019/12/17
