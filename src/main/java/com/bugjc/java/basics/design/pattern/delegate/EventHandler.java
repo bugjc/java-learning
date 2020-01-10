@@ -31,7 +31,7 @@ public class EventHandler {
      *
      * @throws Exception
      */
-    public void notify(Event e) throws Exception {
+    public void invoke(Event e) throws Exception {
         e.invoke();
     }
 
@@ -40,7 +40,7 @@ public class EventHandler {
      *
      * @throws Exception
      */
-    public void notifyAllObject() throws Exception {
+    public void invokeAll() throws Exception {
         for (Event e : objects) {
             e.invoke();
         }

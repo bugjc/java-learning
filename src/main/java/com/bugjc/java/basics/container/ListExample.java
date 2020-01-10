@@ -94,4 +94,13 @@ public class ListExample {
         return locations1;
     }
 
+    /**
+     * List转变为逗号分隔的字符串
+     * @param locations
+     * @return
+     */
+    public static String join(List<String> locations){
+        return String.join(",", locations);
+    }
+
 }

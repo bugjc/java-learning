@@ -54,8 +54,6 @@ public class Event {
         return object;
     }
 
-    //这里省略了若干get和set方法
-
     /**
      * 根据该对象的方法名，方法参数，利用反射机制，执行该方法
      *
