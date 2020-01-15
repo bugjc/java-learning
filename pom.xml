@@ -30,9 +30,17 @@
         <metrics-core.version>4.1.2</metrics-core.version>
         <junitperf.version>2.0.2</junitperf.version>
         <retry4j.version>0.15.0</retry4j.version>
+        <kdio-core.version>1.0.0</kdio-core.version>
     </properties>
 
     <dependencies>
+
+        <!-- DIO 库 参考自 smacke/jaydio -->
+        <dependency>
+            <groupId>moe.cnkirito.kdio</groupId>
+            <artifactId>kdio-core</artifactId>
+            <version>${kdio-core.version}</version>
+        </dependency>
 
         <!-- java8 轻量级重试库-->
         <dependency>

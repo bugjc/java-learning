@@ -30,6 +30,14 @@ public class ThreadPoolExecutorUtil {
      */
     public static void execute(Runnable command){
         threadPoolExecutor.execute(command);
+
+    }
+
+    /**
+     * 关闭连接
+     */
+    public static void shutdown(){
+        threadPoolExecutor.shutdown();
     }
 
     /**
