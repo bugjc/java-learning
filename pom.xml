@@ -35,6 +35,13 @@
 
     <dependencies>
 
+        <!-- 布隆过滤器（https://colobu.com/2016/07/02/bloom-filter-for-scala/） -->
+        <dependency>
+            <groupId>com.github.alexandrnikitin</groupId>
+            <artifactId>bloom-filter_2.11</artifactId>
+            <version>0.11.0</version>
+        </dependency>
+
         <!-- DIO 库 参考自 smacke/jaydio -->
         <dependency>
             <groupId>moe.cnkirito.kdio</groupId>
