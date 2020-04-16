@@ -27,8 +27,9 @@ public class Solution {
      */
     public TreeNode maxNode(TreeNode root) {
         // Write your code here
-        if (root == null)
+        if (root == null) {
             return null;
+        }
 
         max(root);
         return node;
