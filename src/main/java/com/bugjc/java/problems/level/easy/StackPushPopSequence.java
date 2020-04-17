@@ -8,7 +8,7 @@ import java.util.Stack;
  * @author aoki
  * @date 2020/4/16
  * **/
-public class StackPush {
+public class StackPushPopSequence {
     public boolean validateStackSequences(int[] pushed, int[] popped) {
         //1,2,3   1,2,3 2,3,1 3,2,1
         Stack<Integer> stackPush = new Stack<Integer>();
@@ -30,6 +30,6 @@ public class StackPush {
         //int[] popped = {1,2,3};
         //int[] popped = {2,1,3};
         int[] popped = {2,3,1};
-        System.out.println(new StackPush().validateStackSequences(pushed, popped));
+        System.out.println(new StackPushPopSequence().validateStackSequences(pushed, popped));
     }
 }
