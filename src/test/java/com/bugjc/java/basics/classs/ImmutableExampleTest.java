@@ -1,6 +1,6 @@
 package com.bugjc.java.basics.classs;
 
-import org.junit.jupiter.api.Test;
+import Test;
 
 class ImmutableExampleTest {
 

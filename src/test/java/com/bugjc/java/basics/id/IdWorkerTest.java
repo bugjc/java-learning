@@ -1,6 +1,6 @@
 package com.bugjc.java.basics.id;
 
-import org.junit.jupiter.api.Test;
+import Test;
 
 class IdWorkerTest {
 

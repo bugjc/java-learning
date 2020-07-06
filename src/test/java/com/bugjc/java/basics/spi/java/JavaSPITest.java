@@ -1,6 +1,6 @@
 package com.bugjc.java.basics.spi.java;
 
-import org.junit.jupiter.api.Test;
+import Test;
 
 import java.util.ServiceLoader;
 

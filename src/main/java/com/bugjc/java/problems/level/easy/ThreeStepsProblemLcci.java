@@ -14,7 +14,37 @@ public class ThreeStepsProblemLcci {
      * @return
      */
     public int waysToStep(int n) {
-        return f(n) % 1000000007;
+        if(n == 1){
+            return 1;
+        }
+
+        if (n == 2){
+            return 2;
+        }
+
+        if (n == 3){
+            return 4;
+        }
+
+        //多开一个用来存放 0 个 1相加的结果
+        int[] dp = new int[n + 1];
+        dp[0] = 0;
+        dp[1] = 1;
+        dp[2] = 2;
+        dp[3] = 4;
+        for (int i = 4;i<=n; i++){
+            if (i - 1 >= 0) {
+                dp[i] = (dp[i - 1] % 1000000007);
+            }
+            if (i - 2 >= 0) {
+                dp[i] = (dp[i] + (dp[i - 2] % 1000000007)) % 1000000007;
+            }
+            if (i - 3 >= 0) {
+                dp[i] = (dp[i] + (dp[i - 3] % 1000000007)) % 1000000007;
+            }
+
+        }
+        return dp[n];
     }
 
     private int f(int n){
@@ -80,7 +110,7 @@ public class ThreeStepsProblemLcci {
     }
 
     public static void main(String[] args) {
-        System.out.println(new ThreeStepsProblemLcci().waysToStep(40));
+        System.out.println(new ThreeStepsProblemLcci().waysToStep(61));
     }
 
 }

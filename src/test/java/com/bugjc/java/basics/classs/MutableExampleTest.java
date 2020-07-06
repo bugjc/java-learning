@@ -2,7 +2,7 @@ package com.bugjc.java.basics.classs;
 
 import com.github.houbb.junitperf.core.annotation.JunitPerfConfig;
 import com.github.houbb.junitperf.core.report.impl.HtmlReporter;
-import org.junit.jupiter.api.Test;
+import Test;
 
 import java.util.Date;
 

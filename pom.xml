@@ -35,6 +35,23 @@
 
     <dependencies>
 
+        <!--内容分析工具-->
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-core</artifactId>
+            <version>1.24.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-parsers</artifactId>
+            <version>1.24.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-langdetect</artifactId>
+            <version>1.24.1</version>
+        </dependency>
+
         <!-- 布隆过滤器（https://colobu.com/2016/07/02/bloom-filter-for-scala/） -->
         <dependency>
             <groupId>com.github.alexandrnikitin</groupId>
@@ -158,6 +175,12 @@
             <groupId>com.github.houbb</groupId>
             <artifactId>junitperf</artifactId>
             <version>${junitperf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.0.1</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>

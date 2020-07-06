@@ -1,12 +1,12 @@
 package com.bugjc.java.business.mfa.totp;
 
 import cn.hutool.core.codec.Base32;
-import org.junit.jupiter.api.Test;
+import Test;
 
 import java.security.GeneralSecurityException;
 import java.util.Random;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static Assertions.*;
 
 
 class TwoFactorAuthUtilTest {

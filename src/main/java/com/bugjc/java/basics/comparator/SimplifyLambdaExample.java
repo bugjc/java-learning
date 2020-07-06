@@ -3,7 +3,7 @@ package com.bugjc.java.basics.comparator;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import org.junit.jupiter.api.Test;
+import Test;
 
 import java.util.ArrayList;
 import java.util.Comparator;

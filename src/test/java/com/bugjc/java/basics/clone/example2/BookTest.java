@@ -1,9 +1,7 @@
 package com.bugjc.java.basics.clone.example2;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import Test;
 
 @Slf4j
 class BookTest {

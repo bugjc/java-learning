@@ -2,12 +2,12 @@ package com.bugjc.java.basics.stream;
 
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Test;
+import Test;
 
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static Assertions.assertEquals;
+import static Assertions.assertTrue;
 
 @Slf4j
 public class OptionalExample {

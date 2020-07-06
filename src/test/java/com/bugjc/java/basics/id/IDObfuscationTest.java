@@ -2,9 +2,7 @@ package com.bugjc.java.basics.id;
 
 import cn.hutool.core.util.RandomUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import Test;
 
 @Slf4j
 class IDObfuscationTest {
