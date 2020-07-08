@@ -1,7 +1,7 @@
 package com.bugjc.java.basics.annotation;
 
 import lombok.extern.slf4j.Slf4j;
-import Test;
+import org.junit.jupiter.api.Test;
 
 @Slf4j
 class AnnotationExampleTest {

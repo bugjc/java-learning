@@ -1,6 +1,6 @@
 package com.bugjc.java.libs.db.map;
 
-import Test;
+import org.junit.jupiter.api.Test;
 import org.mapdb.BTreeMap;
 import org.mapdb.DB;
 import org.mapdb.DBMaker;
@@ -9,7 +9,8 @@ import org.mapdb.serializer.SerializerArrayTuple;
 
 import java.util.Map;
 
-import static Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 /**
  * 类描述

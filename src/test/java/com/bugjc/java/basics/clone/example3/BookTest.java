@@ -1,6 +1,7 @@
 package com.bugjc.java.basics.clone.example3;
 
-import Test;
+
+import org.junit.jupiter.api.Test;
 
 class BookTest {
 

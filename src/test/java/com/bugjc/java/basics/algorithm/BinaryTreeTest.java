@@ -1,6 +1,7 @@
 package com.bugjc.java.basics.algorithm;
 
-import Test;
+
+import org.junit.jupiter.api.Test;
 
 import java.util.LinkedList;
 

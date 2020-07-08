@@ -1,7 +1,7 @@
 package com.bugjc.java.basics.thread.threadlocal;
 
 import lombok.extern.slf4j.Slf4j;
-import Test;
+import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

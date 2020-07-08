@@ -2,8 +2,8 @@ package com.bugjc.java.basics.container;
 
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
-import BeforeEach;
-import Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 @Slf4j
 class CharacterExampleTest {
