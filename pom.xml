@@ -14,6 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <scala.binary.version>2.11</scala.binary.version>
 
         <cglib.version>3.3.0</cglib.version>
         <hutool-all.version>5.0.5</hutool-all.version>
@@ -31,32 +32,42 @@
         <junitperf.version>2.0.2</junitperf.version>
         <retry4j.version>0.15.0</retry4j.version>
         <kdio-core.version>1.0.0</kdio-core.version>
+        <bloom-filter.version>0.11.0</bloom-filter.version>
+        <tika.version>1.24.1</tika.version>
+        <jsqlparser.version>3.1</jsqlparser.version>
     </properties>
 
     <dependencies>
+
+        <!--SQL parser -->
+        <dependency>
+            <groupId>com.github.jsqlparser</groupId>
+            <artifactId>jsqlparser</artifactId>
+            <version>${jsqlparser.version}</version>
+        </dependency>
 
         <!--内容分析工具-->
         <dependency>
             <groupId>org.apache.tika</groupId>
             <artifactId>tika-core</artifactId>
-            <version>1.24.1</version>
+            <version>${tika.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.tika</groupId>
             <artifactId>tika-parsers</artifactId>
-            <version>1.24.1</version>
+            <version>${tika.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.tika</groupId>
             <artifactId>tika-langdetect</artifactId>
-            <version>1.24.1</version>
+            <version>${tika.version}</version>
         </dependency>
 
         <!-- 布隆过滤器（https://colobu.com/2016/07/02/bloom-filter-for-scala/） -->
         <dependency>
             <groupId>com.github.alexandrnikitin</groupId>
-            <artifactId>bloom-filter_2.11</artifactId>
-            <version>0.11.0</version>
+            <artifactId>bloom-filter_${scala.binary.version}</artifactId>
+            <version>${bloom-filter.version}</version>
         </dependency>
 
         <!-- DIO 库 参考自 smacke/jaydio -->
