@@ -22,6 +22,8 @@
 - bloom.filter（布隆过滤器示例）
 - db.map（MapDB 示例）
 - db.rocks（RocksDB 示例）
+- disruptor（高性能队列示例）
 - metrics（监控度量库示例）
 - retry4j（轻量级重试库示例）
+- sql.parse（SQL 解析示例）
 - tika（文件内容分析工具库示例）

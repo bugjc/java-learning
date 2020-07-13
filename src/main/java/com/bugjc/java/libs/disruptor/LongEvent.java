@@ -1,4 +1,4 @@
-package com.bugjc.java.business.queue;
+package com.bugjc.java.libs.disruptor;
 
 import lombok.Data;
 
