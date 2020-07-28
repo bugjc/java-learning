@@ -18,6 +18,7 @@
 
         <cglib.version>3.3.0</cglib.version>
         <hutool-all.version>5.0.5</hutool-all.version>
+        <j-text-utils.version>0.3.4</j-text-utils.version>
         <logback-classic.version>1.2.3</logback-classic.version>
         <lombok.version>1.18.10</lombok.version>
         <fastjson.version>1.2.62</fastjson.version>
@@ -144,6 +145,13 @@
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
             <version>${hutool-all.version}</version>
+        </dependency>
+
+        <!-- 控制台打印表格工具类 -->
+        <dependency>
+            <groupId>com.massisframework</groupId>
+            <artifactId>j-text-utils</artifactId>
+            <version>${j-text-utils.version}</version>
         </dependency>
 
         <!-- 日志 -->
