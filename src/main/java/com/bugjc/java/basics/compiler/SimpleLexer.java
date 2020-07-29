@@ -1,6 +1,7 @@
 package com.bugjc.java.basics.compiler;
 
 import com.bugjc.java.basics.compiler.token.Token;
+import com.bugjc.java.basics.compiler.token.TokenReader;
 import com.bugjc.java.basics.compiler.token.TokenType;
 import com.bugjc.java.basics.compiler.token.impl.SimpleToken;
 import com.bugjc.java.basics.compiler.token.impl.SimpleTokenReader;
@@ -261,8 +262,8 @@ public class SimpleLexer {
      *
      * @param tokenReader
      */
-    public void dump(SimpleTokenReader tokenReader) {
-        tokenReader.print();
+    public void dump(TokenReader tokenReader) {
+        tokenReader.dump();
     }
 
     /**

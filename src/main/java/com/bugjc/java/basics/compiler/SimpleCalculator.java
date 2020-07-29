@@ -2,7 +2,7 @@ package com.bugjc.java.basics.compiler;
 
 import com.bugjc.java.basics.compiler.node.ASTNode;
 import com.bugjc.java.basics.compiler.node.ASTNodeType;
-import com.bugjc.java.basics.compiler.node.SimpleASTNode;
+import com.bugjc.java.basics.compiler.node.impl.SimpleASTNode;
 import com.bugjc.java.basics.compiler.token.Token;
 import com.bugjc.java.basics.compiler.token.TokenReader;
 import com.bugjc.java.basics.compiler.token.TokenType;
@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
  * 实现一个计算器，但计算的结合性是有问题的。因为它使用了下面的语法规则：
  * <p>
  * additive -> multiplicative | multiplicative + additive
- * multiplicative -> primary | primary * multiplicative    //感谢@Void_seT，原来写成+号了，写错了。
+ * multiplicative -> primary | primary * multiplicative
  * <p>
  * 递归项在右边，会自然的对应右结合。我们真正需要的是左结合。
  *

@@ -35,4 +35,9 @@ public interface ASTNode {
      * @return String
      */
     String getText();
+
+    /**
+     * 打印输出 AST 的树状结构
+     */
+    void dump();
 }

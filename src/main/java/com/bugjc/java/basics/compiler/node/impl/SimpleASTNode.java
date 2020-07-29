@@ -1,4 +1,9 @@
-package com.bugjc.java.basics.compiler.node;
+package com.bugjc.java.basics.compiler.node.impl;
+
+import cn.hutool.core.lang.Console;
+import com.bugjc.java.basics.compiler.node.ASTNode;
+import com.bugjc.java.basics.compiler.node.ASTNodeType;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,6 +15,7 @@ import java.util.List;
  *
  * @author aoki
  */
+@Slf4j
 public class SimpleASTNode implements ASTNode {
     private SimpleASTNode parent = null;
     private List<ASTNode> children = new ArrayList<ASTNode>();
@@ -43,9 +49,21 @@ public class SimpleASTNode implements ASTNode {
         return text;
     }
 
+    @Override
+    public void dump() {
+        Console.log("\nPrint: {}", "AST");
+        Console.log("\n----------------------------------------------------------\n");
+        StringBuilder indent = new StringBuilder("\t");
+        System.out.println(indent.toString() + parent.getType() + " " + parent.getText());
+        for (ASTNode child : parent.getChildren()) {
+            indent.append("\t");
+            Console.log(indent.toString() + child.getType() + " " + child.getText());
+        }
+        Console.log("\n----------------------------------------------------------\n");
+    }
+
     public void addChild(SimpleASTNode child) {
         children.add(child);
         child.parent = this;
     }
-
 }

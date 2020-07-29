@@ -36,4 +36,9 @@ public interface TokenReader {
      * @param position  --指定的位置
      */
     void setPosition(int position);
+
+    /**
+     * 打印所有 token
+     */
+    void dump();
 }

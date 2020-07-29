@@ -1,5 +1,6 @@
 package com.bugjc.java.basics.compiler.token.impl;
 
+import cn.hutool.core.lang.Console;
 import com.bugjc.java.basics.compiler.token.Token;
 import com.bugjc.java.basics.compiler.token.TokenReader;
 import dnl.utils.text.table.TextTable;
@@ -58,9 +59,11 @@ public class SimpleTokenReader implements TokenReader {
     }
 
     /**
-     * 打印 Tokens
+     * dump
      */
-    public void print() {
+    @Override
+    public void dump() {
+        Console.log("\nPrint: {}", "Tokens");
         String[] titles = new String[]{"text", "type"};
         Object[][] values = new Object[tokens.size()][2];
         for (int i = 0; i < tokens.size(); i++) {
@@ -70,8 +73,9 @@ public class SimpleTokenReader implements TokenReader {
         }
 
         TextTable tt = new TextTable(titles, values);
-        tt.printTable();
-        System.out.println("\n");
+        Console.log("\n----------------------------------------------------------\n");
+        tt.printTable(System.out, 1);
+        Console.log("\n----------------------------------------------------------\n");
     }
 
 }

@@ -1,6 +1,7 @@
 package com.bugjc.java.basics.compiler;
 
 
+import cn.hutool.core.lang.Console;
 import com.bugjc.java.basics.compiler.token.impl.SimpleTokenReader;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -17,31 +18,31 @@ class SimpleLexerTest {
 
         //测试
         String script = "int age = 45;";
-        log.info("Parse: {}", script);
+        Console.log("Parse: {}", script);
         SimpleTokenReader tokenReader = lexer.tokenize(script);
         lexer.dump(tokenReader);
 
         //测试 inta 的解析
         script = "inta age = 45;";
-        log.info("Parse: {}", script);
+        Console.log("Parse: {}", script);
         tokenReader = lexer.tokenize(script);
         lexer.dump(tokenReader);
 
         //测试 in 的解析
         script = "in age = 45;";
-        log.info("Parse: {}", script);
+        Console.log("Parse: {}", script);
         tokenReader = lexer.tokenize(script);
         lexer.dump(tokenReader);
 
         //测试 >= 的解析
         script = "age >= 45;";
-        log.info("Parse: {}", script);
+        Console.log("Parse: {}", script);
         tokenReader = lexer.tokenize(script);
         lexer.dump(tokenReader);
 
         //测试 > 的解析
         script = "age > 45;";
-        log.info("Parse: {}", script);
+        Console.log("Parse: {}", script);
         tokenReader = lexer.tokenize(script);
         lexer.dump(tokenReader);
     }
