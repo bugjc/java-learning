@@ -1,4 +1,4 @@
-package com.bugjc.java.basics.compiler.node;
+package com.bugjc.java.basics.compiler.simple.node;
 
 /**
  * AST节点的类型。

@@ -2,7 +2,8 @@ package com.bugjc.java.basics.compiler;
 
 
 import cn.hutool.core.lang.Console;
-import com.bugjc.java.basics.compiler.token.impl.SimpleTokenReader;
+import com.bugjc.java.basics.compiler.simple.SimpleLexer;
+import com.bugjc.java.basics.compiler.simple.token.impl.SimpleTokenReader;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 

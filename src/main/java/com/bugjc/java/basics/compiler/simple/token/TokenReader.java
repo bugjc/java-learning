@@ -1,4 +1,4 @@
-package com.bugjc.java.basics.compiler.token;
+package com.bugjc.java.basics.compiler.simple.token;
 
 /**
  * 一个Token流。由Lexer生成。Parser可以从中获取Token。

@@ -1,10 +1,10 @@
-package com.bugjc.java.basics.compiler;
+package com.bugjc.java.basics.compiler.simple;
 
-import com.bugjc.java.basics.compiler.token.Token;
-import com.bugjc.java.basics.compiler.token.TokenReader;
-import com.bugjc.java.basics.compiler.token.TokenType;
-import com.bugjc.java.basics.compiler.token.impl.SimpleToken;
-import com.bugjc.java.basics.compiler.token.impl.SimpleTokenReader;
+import com.bugjc.java.basics.compiler.simple.token.Token;
+import com.bugjc.java.basics.compiler.simple.token.TokenReader;
+import com.bugjc.java.basics.compiler.simple.token.TokenType;
+import com.bugjc.java.basics.compiler.simple.token.impl.SimpleToken;
+import com.bugjc.java.basics.compiler.simple.token.impl.SimpleTokenReader;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.CharArrayReader;

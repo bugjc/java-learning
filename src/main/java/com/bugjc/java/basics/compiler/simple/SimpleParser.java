@@ -1,11 +1,11 @@
-package com.bugjc.java.basics.compiler;
+package com.bugjc.java.basics.compiler.simple;
 
-import com.bugjc.java.basics.compiler.node.ASTNode;
-import com.bugjc.java.basics.compiler.node.ASTNodeType;
-import com.bugjc.java.basics.compiler.node.impl.SimpleASTNode;
-import com.bugjc.java.basics.compiler.token.Token;
-import com.bugjc.java.basics.compiler.token.TokenReader;
-import com.bugjc.java.basics.compiler.token.TokenType;
+import com.bugjc.java.basics.compiler.simple.node.ASTNode;
+import com.bugjc.java.basics.compiler.simple.node.ASTNodeType;
+import com.bugjc.java.basics.compiler.simple.node.impl.SimpleASTNode;
+import com.bugjc.java.basics.compiler.simple.token.Token;
+import com.bugjc.java.basics.compiler.simple.token.TokenReader;
+import com.bugjc.java.basics.compiler.simple.token.TokenType;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -125,7 +125,7 @@ public class SimpleParser {
                         //消耗掉这个分号
                         tokens.read();
 
-                        //报错，缺少分号
+                     //报错，缺少分号
                     } else {
                         throw new Exception("invalid statement, expecting semicolon");
                     }
@@ -280,7 +280,7 @@ public class SimpleParser {
     /**
      * 打印输出AST的树状结构
      */
-    void dumpAST() {
+    public void dumpAST() {
         node.dump();
     }
 }

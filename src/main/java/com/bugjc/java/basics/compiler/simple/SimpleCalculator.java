@@ -1,11 +1,11 @@
-package com.bugjc.java.basics.compiler;
+package com.bugjc.java.basics.compiler.simple;
 
-import com.bugjc.java.basics.compiler.node.ASTNode;
-import com.bugjc.java.basics.compiler.node.ASTNodeType;
-import com.bugjc.java.basics.compiler.node.impl.SimpleASTNode;
-import com.bugjc.java.basics.compiler.token.Token;
-import com.bugjc.java.basics.compiler.token.TokenReader;
-import com.bugjc.java.basics.compiler.token.TokenType;
+import com.bugjc.java.basics.compiler.simple.node.ASTNode;
+import com.bugjc.java.basics.compiler.simple.node.ASTNodeType;
+import com.bugjc.java.basics.compiler.simple.node.impl.SimpleASTNode;
+import com.bugjc.java.basics.compiler.simple.token.Token;
+import com.bugjc.java.basics.compiler.simple.token.TokenReader;
+import com.bugjc.java.basics.compiler.simple.token.TokenType;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -257,7 +257,7 @@ public class SimpleCalculator {
      * @param node   --抽象树
      * @param indent 缩进字符，由 tab 组成，每一级多一个tab
      */
-    void dumpAST(ASTNode node, String indent) {
+    public void dumpAST(ASTNode node, String indent) {
         log.info(indent + node.getType() + " " + node.getText());
         for (ASTNode child : node.getChildren()) {
             dumpAST(child, indent + "\t");

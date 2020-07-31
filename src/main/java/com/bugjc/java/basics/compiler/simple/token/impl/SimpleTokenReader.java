@@ -1,8 +1,8 @@
-package com.bugjc.java.basics.compiler.token.impl;
+package com.bugjc.java.basics.compiler.simple.token.impl;
 
 import cn.hutool.core.lang.Console;
-import com.bugjc.java.basics.compiler.token.Token;
-import com.bugjc.java.basics.compiler.token.TokenReader;
+import com.bugjc.java.basics.compiler.simple.token.Token;
+import com.bugjc.java.basics.compiler.simple.token.TokenReader;
 import dnl.utils.text.table.TextTable;
 import lombok.extern.slf4j.Slf4j;
 

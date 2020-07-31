@@ -41,6 +41,14 @@
 
     <dependencies>
 
+        <!--一款强大的语法分析器生成工具-->
+        <dependency>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr</artifactId>
+            <version>4.7.2</version>
+        </dependency>
+
+
         <!--SQL parser -->
         <dependency>
             <groupId>com.github.jsqlparser</groupId>

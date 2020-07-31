@@ -1,7 +1,7 @@
-package com.bugjc.java.basics.compiler.token.impl;
+package com.bugjc.java.basics.compiler.simple.token.impl;
 
-import com.bugjc.java.basics.compiler.token.Token;
-import com.bugjc.java.basics.compiler.token.TokenType;
+import com.bugjc.java.basics.compiler.simple.token.Token;
+import com.bugjc.java.basics.compiler.simple.token.TokenType;
 
 /**
  * Token的一个简单实现。只有类型和文本值两个属性。

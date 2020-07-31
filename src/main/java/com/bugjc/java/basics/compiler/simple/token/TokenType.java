@@ -1,4 +1,4 @@
-package com.bugjc.java.basics.compiler.token;
+package com.bugjc.java.basics.compiler.simple.token;
 
 /**
  * Token 的类型

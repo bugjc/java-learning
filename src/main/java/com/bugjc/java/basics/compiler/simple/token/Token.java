@@ -1,4 +1,4 @@
-package com.bugjc.java.basics.compiler.token;
+package com.bugjc.java.basics.compiler.simple.token;
 
 /**
  * 一个简单的 Token。
