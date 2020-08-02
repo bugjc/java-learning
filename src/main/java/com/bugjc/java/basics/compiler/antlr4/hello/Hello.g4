@@ -28,16 +28,22 @@
 /**
 这是一个简单的词法规则文件，把前几讲课程里用到的词法用Antlr重新实现一遍。
 使用方法：
-antlr Hello.g4   //生成Hello.java
-javac Hello.java
-grun Hello tokens -tokens Hello.play
-这样会把hello.play中的Token都解析打印出来。
+//1.当前目录生成Hello.java
+antlr Hello.g4
+//2.进入项目跟目录
+cd java-learning
+//3.编译
+mvn clean install -DskipTests
+//4.进入 classes 目录
+cd target/classes
+//5.打印 token
+grun com.bugjc.java.basics.compiler.antlr4.hello.Hello tokens -tokens D:\bugjc\java-learning\target\classes\com\bugjc\java\basics\compiler\antlr4\hello\Hello.play
 */
 
 lexer grammar Hello;  //lexer关键字意味着这是一个词法规则文件，要与文件名相同。
 
 @header {
-package antlrtest;
+package com.bugjc.java.basics.compiler.antlr4.hello;
 }
 
 //关键字

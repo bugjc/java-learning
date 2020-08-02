@@ -5,10 +5,8 @@
 
     <groupId>com.bugjc.java</groupId>
     <artifactId>java-learning</artifactId>
-    <packaging>java</packaging>
     <version>1.0</version>
     <modelVersion>4.0.0</modelVersion>
-
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -37,6 +35,7 @@
         <tika.version>1.24.1</tika.version>
         <jsqlparser.version>3.1</jsqlparser.version>
         <config.version>1.4.0</config.version>
+        <antlr4-runtime.version>4.7.2</antlr4-runtime.version>
     </properties>
 
     <dependencies>
@@ -44,10 +43,9 @@
         <!--一款强大的语法分析器生成工具-->
         <dependency>
             <groupId>org.antlr</groupId>
-            <artifactId>antlr</artifactId>
-            <version>4.7.2</version>
+            <artifactId>antlr4-runtime</artifactId>
+            <version>${antlr4-runtime.version}</version>
         </dependency>
-
 
         <!--SQL parser -->
         <dependency>
@@ -222,6 +220,25 @@
 
 
     <build>
+        <!-- 资源目录 -->
+        <resources>
+            <resource>
+                <!-- 设定主资源目录  -->
+                <directory>src/main/java</directory>
+
+                <!-- maven default生命周期，process-resources阶段执行maven-resources-plugin插件的resources目标处理主资源目下的资源文件时，只处理如下配置中包含的资源类型 -->
+                <includes>
+                    <include>**/*.play</include>
+                    <include>**/*.tokens</include>
+                    <include>**/*.interp</include>
+                </includes>
+
+                <!-- maven default生命周期，process-resources阶段执行maven-resources-plugin插件的resources目标处理主资源目下的资源文件时，是否对主资源目录开启资源过滤 -->
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -236,5 +253,6 @@
             </plugin>
         </plugins>
     </build>
+
 
 </project>
