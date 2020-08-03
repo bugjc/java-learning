@@ -47,7 +47,7 @@ package com.bugjc.java.basics.compiler.antlr4.hello;
 }
 
 //关键字
-If :               'if' | '如果';   //可以在程序里用‘如果’来代替'if'
+If :               'if';
 Int :              'int';
 
 //常量

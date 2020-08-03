@@ -45,7 +45,7 @@ grammar PlayScript;
 import CommonLexer;   //导入词法定义
 
 @header {
-package antlrtest;
+package com.bugjc.java.basics.compiler.antlr4.play.script;
 }
 
 literal

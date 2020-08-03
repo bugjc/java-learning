@@ -19,6 +19,7 @@ RightParen=18
 Id=19
 Whitespace=20
 Newline=21
+'if'=1
 'int'=2
 '='=5
 '*'=7
