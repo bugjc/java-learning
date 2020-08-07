@@ -54,6 +54,7 @@ public class DirListParser implements Parser {
      * @see org.apache.tika.parser.Parser#getSupportedTypes(
      * org.apache.tika.parser.ParseContext)
      */
+    @Override
     public Set<MediaType> getSupportedTypes(ParseContext context) {
         return SUPPORTED_TYPES;
     }
@@ -76,6 +77,7 @@ public class DirListParser implements Parser {
      * org.xml.sax.ContentHandler, org.apache.tika.metadata.Metadata,
      * org.apache.tika.parser.ParseContext)
      */
+    @Override
     public void parse(InputStream is, ContentHandler handler,
                       Metadata metadata, ParseContext context) throws IOException,
             SAXException, TikaException {
@@ -83,28 +85,28 @@ public class DirListParser implements Parser {
         List<String> lines = FileUtils.readLines(TikaInputStream.get(is).getFile(), UTF_8);
         for (String line : lines) {
             String[] fileToks = line.split("\\s+");
-            if (fileToks.length < 8)
+            if (fileToks.length < 8) {
                 continue;
+            }
             String filePermissions = fileToks[0];
             String numHardLinks = fileToks[1];
             String fileOwner = fileToks[2];
             String fileOwnerGroup = fileToks[3];
             String fileSize = fileToks[4];
-            StringBuilder lastModDate = new StringBuilder();
-            lastModDate.append(fileToks[5]);
-            lastModDate.append(" ");
-            lastModDate.append(fileToks[6]);
-            lastModDate.append(" ");
-            lastModDate.append(fileToks[7]);
             StringBuilder fileName = new StringBuilder();
             for (int i = 8; i < fileToks.length; i++) {
                 fileName.append(fileToks[i]);
                 fileName.append(" ");
             }
             fileName.deleteCharAt(fileName.length() - 1);
+            String lastModDate = fileToks[5] +
+                    " " +
+                    fileToks[6] +
+                    " " +
+                    fileToks[7];
             this.addMetadata(metadata, filePermissions, numHardLinks,
                     fileOwner, fileOwnerGroup, fileSize,
-                    lastModDate.toString(), fileName.toString());
+                    lastModDate, fileName.toString());
         }
     }
 
@@ -129,9 +131,9 @@ public class DirListParser implements Parser {
         metadata.add("LastModifiedDate", lastModDate);
         metadata.add("Filename", fileName);
 
-        if (filePerms.indexOf("x") != -1 && filePerms.indexOf("d") == -1) {
+        if (filePerms.contains("x") && !filePerms.contains("d")) {
             if (metadata.get("NumExecutables") != null) {
-                int numExecs = Integer.valueOf(metadata.get("NumExecutables"));
+                int numExecs = Integer.parseInt(metadata.get("NumExecutables"));
                 numExecs++;
                 metadata.set("NumExecutables", String.valueOf(numExecs));
             } else {

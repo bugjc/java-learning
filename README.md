@@ -20,6 +20,7 @@
 
 ## lib（三方库）
 - bloom.filter（布隆过滤器示例）
+- config（读取配置文件示例）
 - db.map（MapDB 示例）
 - db.rocks（RocksDB 示例）
 - disruptor（高性能队列示例）

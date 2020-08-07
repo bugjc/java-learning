@@ -36,9 +36,18 @@
         <jsqlparser.version>3.1</jsqlparser.version>
         <config.version>1.4.0</config.version>
         <antlr4-runtime.version>4.7.2</antlr4-runtime.version>
+        <mockito-core.version>3.4.6</mockito-core.version>
+        <jmockdata.version>4.2.0</jmockdata.version>
     </properties>
 
     <dependencies>
+
+        <!--随机初始化数据工具库-->
+        <dependency>
+            <groupId>com.github.jsonzou</groupId>
+            <artifactId>jmockdata</artifactId>
+            <version>${jmockdata.version}</version>
+        </dependency>
 
         <!--一款强大的语法分析器生成工具-->
         <dependency>
@@ -201,6 +210,15 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- mock -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito-core.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <!--性能测试框架-->
