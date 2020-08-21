@@ -21,6 +21,7 @@ public class ParameterizedTypeBean {
     Class<?> aClass;
     Holder<String> holder;
     List<String> stringList;
+    List<Integer> integerList;
 
     /**
      * Map<String,Person> map 这个 ParameterizedType 的 getOwnerType() 为 null，
