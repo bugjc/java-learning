@@ -38,9 +38,17 @@
         <antlr4-runtime.version>4.7.2</antlr4-runtime.version>
         <mockito-core.version>3.4.6</mockito-core.version>
         <jmockdata.version>4.2.0</jmockdata.version>
+        <netty.version>4.1.53.Final</netty.version>
     </properties>
 
     <dependencies>
+
+        <!-- netty -->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>${netty.version}</version>
+        </dependency>
 
         <!--随机初始化数据工具库-->
         <dependency>
