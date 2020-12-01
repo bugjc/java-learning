@@ -55,8 +55,12 @@ public class Sort {
         int temp;
 
         while (left < right) {
-            while (array[left] < pivot) left++;
-            while (array[right] > pivot) right--;
+            while (array[left] < pivot) {
+                left++;
+            }
+            while (array[right] > pivot) {
+                right--;
+            }
 
             if (left < right) {
                 temp = array[left];

@@ -18,8 +18,9 @@ public class LinkedList {
      */
     public ListNode removeElements(ListNode head, int val) {
         // Write your code here
-        if (head == null)
+        if (head == null) {
             return null;
+        }
 
         ListNode current = head;
 

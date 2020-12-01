@@ -1,4 +1,4 @@
-package com.bugjc.java.problems.level.easy;
+package com.bugjc.java.problems.level.medium;
 
 /**
  * 2. 两数相加
