@@ -3,12 +3,11 @@ package com.bugjc.java.problems.level.easy;
 import com.bugjc.java.problems.level.easy.entity.ListNode;
 
 /**
- * 反转链表
- *
- * @author
- * @date 2020/7/4 11:45 下午
+ * 206. 反转链表
  * @see <a href="https://leetcode-cn.com/problems/reverse-linked-list/">https://leetcode-cn.com</a>
- */
+ * @author aoki
+ * @date 2020/12/2
+ * **/
 public class ReverseLinkedList {
 
     public static void main(String[] args) {
