@@ -34,6 +34,7 @@ import java.io.InputStream;
 public class LanguageDetectingParser extends DelegatingParser {
     private static final long serialVersionUID = 4291320409396502774L;
 
+    @Override
     public void parse(InputStream stream, ContentHandler handler,
                       final Metadata metadata, ParseContext context) throws SAXException,
             IOException, TikaException {
