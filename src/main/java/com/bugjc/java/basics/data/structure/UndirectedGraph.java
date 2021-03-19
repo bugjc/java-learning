@@ -5,11 +5,11 @@ import java.util.Queue;
 
 /**
  * 无向图
- *
+ * 搜索算法
  * @author aoki
  * @date 2021/1/8
  **/
-public class UndiGraph {
+public class UndirectedGraph {
 
     /**
      * 顶点的个数
@@ -21,7 +21,7 @@ public class UndiGraph {
      */
     private LinkedList<Integer> adj[];
 
-    public UndiGraph(int v) {
+    public UndirectedGraph(int v) {
         this.v = v;
         adj = new LinkedList[v];
         for (int i = 0; i < v; ++i) {
@@ -35,7 +35,11 @@ public class UndiGraph {
         adj[t].add(s);
     }
 
-
+    /**
+     * BFS 广度搜索算法
+     * @param s
+     * @param t
+     */
     public void bfs(int s, int t) {
         if (s == t) {
             return;
@@ -79,6 +83,11 @@ public class UndiGraph {
      */
     boolean found = false;
 
+    /**
+     * DFS 深度搜索算法
+     * @param s
+     * @param t
+     */
     public void dfs(int s, int t) {
         found = false;
         boolean[] visited = new boolean[v];
@@ -112,11 +121,11 @@ public class UndiGraph {
 
 
     public static void main(String[] args) {
-        UndiGraph undiGraph = new UndiGraph(10);
+        UndirectedGraph undirectedGraph = new UndirectedGraph(10);
         for (int i = 0; i < 9; i++) {
-            undiGraph.addEdge(i, 9 - i);
+            undirectedGraph.addEdge(i, 9 - i);
         }
 
-        undiGraph.bfs(3,6);
+        undirectedGraph.bfs(3,6);
     }
 }

@@ -44,8 +44,12 @@ import java.util.Map;
 import java.util.zip.GZIPInputStream;
 
 public class TIAParsingExample {
+    public static void main(String[] args) throws Exception {
+         TIAParsingExample.parseToStringExample();
+    }
+
     public static String parseToStringExample() throws Exception {
-        File document = new File("example.doc");
+        File document = new File("E:\\Agriculture\\agriculture-bigdata-parent\\docs\\data\\2020-11生猪生产数据手册.pdf");
         String content = new Tika().parseToString(document);
         System.out.print(content);
         return content;

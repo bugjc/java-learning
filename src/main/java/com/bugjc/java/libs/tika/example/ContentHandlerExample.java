@@ -49,6 +49,7 @@ public class ContentHandlerExample {
     }
 
     public String getMetadata() throws IOException, TikaException, SAXException {
+
         try (InputStream stream = ContentHandlerExample.class.getResourceAsStream("/test/TEST1.xlsx")) {
             Parser parser = new AutoDetectParser();
             BodyContentHandler handler = new BodyContentHandler();
