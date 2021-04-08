@@ -1,1 +1,0 @@
-java -Dfile.encoding=utf-8 org.antlr.v4.gui.TestRig %*
