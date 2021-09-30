@@ -12,6 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <scala.version>2.13</scala.version>
         <scala.binary.version>2.11</scala.binary.version>
 
         <cglib.version>3.3.0</cglib.version>
@@ -39,9 +40,25 @@
         <mockito-core.version>3.4.6</mockito-core.version>
         <jmockdata.version>4.2.0</jmockdata.version>
         <netty.version>4.1.53.Final</netty.version>
+        <!--JMH-->
+        <jmh.version>1.33</jmh.version>
+        <javac.target>1.6</javac.target>
+        <uberjar.name>benchmarks</uberjar.name>
     </properties>
 
     <dependencies>
+
+        <!-- JAVA 微基准测试套件 -->
+        <dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-core</artifactId>
+            <version>${jmh.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-generator-annprocess</artifactId>
+            <version>${jmh.version}</version>
+        </dependency>
 
         <!-- netty -->
         <dependency>
@@ -246,6 +263,7 @@
 
 
     <build>
+
         <!-- 资源目录 -->
         <resources>
             <resource>
@@ -264,8 +282,38 @@
             </resource>
         </resources>
 
-
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.2</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <finalName>${uberjar.name}</finalName>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>org.openjdk.jmh.Main</mainClass>
+                                </transformer>
+                            </transformers>
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/*.SF</exclude>
+                                        <exclude>META-INF/*.DSA</exclude>
+                                        <exclude>META-INF/*.RSA</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
