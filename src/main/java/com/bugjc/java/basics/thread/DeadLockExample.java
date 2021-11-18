@@ -7,16 +7,10 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-/**
- * 线程死锁及检测示例
- * @author aoki
- * @date 2021/9/22
- * **/
-public class DeadLockSample extends Thread{
-
+public class DeadLockExample extends Thread{
     private String first;
     private String second;
-    public DeadLockSample(String name, String first, String second) {
+    public DeadLockExample(String name, String first, String second) {
         super(name);
         this.first = first;
         this.second = second;
@@ -58,8 +52,8 @@ public class DeadLockSample extends Thread{
         // 死锁样例代码…
         String lockA = "lockA";
         String lockB = "lockB";
-        DeadLockSample t1 = new DeadLockSample("Thread1", lockA, lockB);
-        DeadLockSample t2 = new DeadLockSample("Thread2", lockB, lockA);
+        DeadLockExample t1 = new DeadLockExample("Thread1", lockA, lockB);
+        DeadLockExample t2 = new DeadLockExample("Thread2", lockB, lockA);
         t1.start();
         t2.start();
         t1.join();
