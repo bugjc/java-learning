@@ -10,7 +10,7 @@ import java.util.Map;
  * **/
 public class StreamLoopExample {
 
-    public static void main(String[] args) {
+    public synchronized static void main(String[] args) {
         // 创建并赋值 HashMap
         Map<Integer, String> map = new HashMap<>();
         map.put(1, "Java");
