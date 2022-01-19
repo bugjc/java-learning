@@ -60,17 +60,16 @@ public class MyMutexLock implements Lock {
             return true;
         }
 
-
         //共享模式
-//        @Override
-//        protected int tryAcquireShared(int arg) {
-//            return super.tryAcquireShared(arg);
-//        }
-//
-//        @Override
-//        protected boolean tryReleaseShared(int arg) {
-//            return super.tryReleaseShared(arg);
-//        }
+        @Override
+        protected int tryAcquireShared(int arg) {
+            return super.tryAcquireShared(arg);
+        }
+
+        @Override
+        protected boolean tryReleaseShared(int arg) {
+            return super.tryReleaseShared(arg);
+        }
 
         final ConditionObject newCondition() {
             return new ConditionObject();

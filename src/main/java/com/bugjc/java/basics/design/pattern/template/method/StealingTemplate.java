@@ -1,7 +1,6 @@
 package com.bugjc.java.basics.design.pattern.template.method;
 
 import lombok.extern.slf4j.Slf4j;
-import lombok.var;
 
 /**
  * 偷窃模板方法
