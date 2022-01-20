@@ -16,7 +16,7 @@
         <scala.binary.version>2.11</scala.binary.version>
 
         <cglib.version>3.3.0</cglib.version>
-        <hutool-all.version>5.0.5</hutool-all.version>
+        <hutool-all.version>5.3.10</hutool-all.version>
         <j-text-utils.version>0.3.4</j-text-utils.version>
         <logback-classic.version>1.2.3</logback-classic.version>
         <lombok.version>1.18.10</lombok.version>
