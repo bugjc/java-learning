@@ -23,7 +23,7 @@
         <fastjson.version>1.2.62</fastjson.version>
         <junit-jupiter.version>5.5.2</junit-jupiter.version>
         <assertj-core.version>3.14.0</assertj-core.version>
-        <lucene-core.version>4.0.0</lucene-core.version>
+        <lucene-core.version>7.1.0</lucene-core.version>
         <disruptor.version>3.4.1</disruptor.version>
         <guice.version>4.2.2</guice.version>
         <rocksdbjni.version>6.4.6</rocksdbjni.version>
