@@ -86,16 +86,9 @@ public class BitExample {
         int[] primes = bitMain.primeNumber(max);
         log.info("筛选素数：{}", Arrays.toString(primes));
 
-        int e = 0;
-        e |= 1 << 10;
-        log.info("指定位置上置1，{}", e);
-
-        //判断指定位上是0还是1
-        if ((e & (1 << 10)) != 0) {
-            log.info("指定位上为1");
-        } else {
-            log.info("指定位上为0");
-        }
+        int e = 2;
+        e |= 1 << 1;
+        log.info("指定第 {} 位，置 1", e);
     }
 
     /**

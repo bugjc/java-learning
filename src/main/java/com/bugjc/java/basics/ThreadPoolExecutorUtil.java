@@ -16,12 +16,12 @@ public class ThreadPoolExecutorUtil {
     /**
      * 初始化线程池
      */
-    private static ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(20, 200,
+    private static final ThreadPoolExecutor THREAD_POOL_EXECUTOR = new ThreadPoolExecutor(20, 200,
             60, TimeUnit.MILLISECONDS,
             new LinkedBlockingQueue<>(2048), new ThreadFactoryBuilder().setNamePrefix("demo-pool-").build(), new ThreadPoolExecutor.AbortPolicy());
 
     public static ThreadPoolExecutor getThreadPoolExecutor(){
-        return threadPoolExecutor;
+        return THREAD_POOL_EXECUTOR;
     }
 
     /**
@@ -29,7 +29,7 @@ public class ThreadPoolExecutorUtil {
      * @param command
      */
     public static void execute(Runnable command){
-        threadPoolExecutor.execute(command);
+        THREAD_POOL_EXECUTOR.execute(command);
 
     }
 
@@ -37,7 +37,7 @@ public class ThreadPoolExecutorUtil {
      * 关闭连接
      */
     public static void shutdown(){
-        threadPoolExecutor.shutdown();
+        THREAD_POOL_EXECUTOR.shutdown();
     }
 
     /**

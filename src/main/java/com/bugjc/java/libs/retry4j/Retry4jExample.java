@@ -12,7 +12,7 @@ import java.util.concurrent.Callable;
 
 public class Retry4jExample<T> {
 
-    private CallExecutor<T> callExecutor;
+    private final CallExecutor callExecutor;
 
     public Retry4jExample(){
         RetryConfigBuilder retryConfigBuilder = new RetryConfigBuilder(true);

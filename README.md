@@ -28,3 +28,4 @@
 - retry4j（轻量级重试库示例）
 - sql.parse（SQL 解析示例）
 - tika（文件内容分析工具库示例）
+- jmh（性能测试工具 JMH, Java Microbenchmark Harness, JAVA 微基准测试套件）
