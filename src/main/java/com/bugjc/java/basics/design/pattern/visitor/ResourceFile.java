@@ -15,7 +15,7 @@ public abstract class ResourceFile {
 
     /**
      * 可接收的访问者
-     * @param vistor
+     * @param visitor
      */
-    abstract public void accept(Visitor vistor);
+    abstract public void accept(Visitor visitor);
 }

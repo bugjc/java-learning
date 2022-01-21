@@ -25,13 +25,62 @@ public class FileExample {
         File currentDir = new File(System.getProperty("user.dir"));
         System.out.println(currentDir);
 
-        Path currentDir1 = Path.of(System.getProperty("user.home"));
-        Files.list(currentDir1).forEach(System.out::println);
+        Path tempDir = Path.of(System.getProperty("java.io.tmpdir"));
+        System.out.println(tempDir);
 
-        //findFileRecursively(currentDir1, "settings");
-        //findFileWithWalk(currentDir1, "settings");
-        //findFileWithWalkFileTree(currentDir1, "settings");
-        findFileWithFind(currentDir1, "settings");
+        Path homeDir = Path.of(System.getProperty("user.home"));
+        System.out.println(homeDir);
+
+        Path tempFile = Files.createTempFile("happycoders-", ".tmp");
+        System.out.println(tempFile);
+
+        Path targetDir = Path.of(System.getProperty("user.home"));
+        Path target = targetDir.resolve(tempFile.getFileName());
+        Files.move(tempFile, target);
+
+        Path tempDir1 = Files.createTempDirectory("happycoders-");
+        Path tempDir2 = Files.createTempDirectory("happycoders-");
+        target = tempDir2.resolve(tempDir1.getFileName());
+        Files.move(tempDir1, target);
+
+        try {
+            tempFile = Files.createTempFile("happycoders-", ".tmp");
+            target = tempFile.resolveSibling("happycoders.tmp");
+            Files.move(tempFile, target);
+        } catch (FileAlreadyExistsException ignore){
+
+        }
+
+        tempFile = Files.createTempFile("happycoders-", ".tmp");
+        targetDir = Path.of(System.getProperty("user.home"));
+        target = targetDir.resolve(tempFile.getFileName());
+        Files.copy(tempFile, target);
+
+        tempFile = Files.createTempFile("happycoders-", ".tmp");
+        Files.delete(tempFile);
+
+        try {
+            tempDir = Files.createTempDirectory("happycoders-");
+            tempFile = Files.createTempFile(tempDir, "happycoders-", ".tmp");
+            Files.delete(tempDir);
+        } catch (DirectoryNotEmptyException ignore){
+        }
+
+        tempFile = Files.createTempFile("happycoders-", ".tmp");
+        Path linkDir = Paths.get(System.getProperty("user.home"));
+        Path link = linkDir.resolve(tempFile.getFileName());
+        Files.createSymbolicLink(link, tempFile);
+        System.out.println(tempFile);
+        System.out.println(link);
+
+
+
+        //Files.list(homeDir).forEach(System.out::println);
+        //findFileRecursively(homeDir, "settings");
+        //findFileWithWalk(homeDir, "settings");
+        //findFileWithWalkFileTree(homeDir, "settings");
+        //findFileWithFind(homeDir, "settings");
+
     }
 
     private static void findFileRecursively(
