@@ -20,7 +20,7 @@
         <j-text-utils.version>0.3.4</j-text-utils.version>
         <logback-classic.version>1.2.3</logback-classic.version>
         <lombok.version>1.18.10</lombok.version>
-        <fastjson.version>1.2.62</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <junit-jupiter.version>5.5.2</junit-jupiter.version>
         <assertj-core.version>3.14.0</assertj-core.version>
         <lucene-core.version>4.0.0</lucene-core.version>
