@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Windows 按钮实现
+ * Windows 按钮产品实现
  * @author 杨青 2022/11/14
  **/
 public class WindowsButton implements Button {
@@ -14,6 +14,7 @@ public class WindowsButton implements Button {
 
     @Override
     public void render() {
+        System.out.println("<JButton>Test Button</JButton>");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JLabel label = new JLabel("Hello World!");
         label.setOpaque(true);
@@ -35,6 +36,7 @@ public class WindowsButton implements Button {
     public void onClick() {
         button = new JButton("Exit");
         button.addActionListener(e -> {
+            System.out.println("Click! Button says - 'Hello World!'");
             frame.setVisible(false);
             System.exit(0);
         });
