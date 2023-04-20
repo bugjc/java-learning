@@ -7,7 +7,7 @@ import java.lang.annotation.*;
 
 /**
  * 注解扩展示例
- * 自定义注解继承
+ * 自定义注解继承注解
  */
 public class AnnotationExtendExample {
     public static void main(String[] args) {
@@ -34,7 +34,6 @@ public class AnnotationExtendExample {
     }
 
     public interface IUserService {
-
     }
 
     @Service("UserServiceImpl")
